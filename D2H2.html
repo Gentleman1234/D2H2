@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    </head>
+  <body>
+<a-scene>
+    <!-- Asset Management System -->
+    <a-assets>
+    <a-assets-item id="village" src="scene.gltf"></a-assets-item>
+    <img id="audi" src="audi.jpg">
+    <audio id="honk" src="honk.mp3"></audio>
+    </a-assets>
+    
+    <a-entity gltf-model="#village" position="-5 1 -18" rotation="0 -50 0"></a-entity>
+
+    <a-entity light="intensity:1.5" position="-20 25 30"></a-entity>
+    <a-image src="#audi" position="-3.5 1 15" rotation="0 210 0" sound="src:#honk; on:click"></a-image>
+    <!-- Sky-->
+    <a-entity position="-9.5 0 -20">
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-entity>
+
+<a-cylinder color="yellow" radius="2" height="1" position="-8 14 2"
+animation__drive="dur:5000; easing: linear; from:-8 14 2; to:8 14 2; loop: -1; property: position">
+
+</a-cylinder>
+<a-box color="blue" width="2" depth="2" height="2" position="-8 16 2"
+animation__drive="dur:5000; easing: linear; from:8 16 2; to: -8 16 2; loop: -1; property: position" ></a-box> 
+        
+ </a-scene>
+    </body>
+</html>
